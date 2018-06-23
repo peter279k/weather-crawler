@@ -76,7 +76,7 @@ foreach ($yearMonths as $yearMonth) {
         $csvRecords = array_slice($csvRecords, 2);
         array_unshift($csvRecords, 'Temperature,T_Max,T_Min,RH,RHMin');
 
-        $writer = new Writer('weather_' . $yearMonth . '_' . $weatherStation[1] . '.csv');
+        $writer = new Writer('./weathers/weather_' . $yearMonth . '_' . $weatherStation[1] . '.csv');
         $writer->writeFromArray($csvRecords);
 
         $sleepSec = random_int(5, 10);
