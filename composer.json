@@ -44,6 +44,7 @@
         }
     },
     "scripts": {
-        "test": "php vendor/bin/phpunit"
+        "test": "php vendor/bin/phpunit",
+        "run-example": "php ./example.php"
     }
 }

@@ -18,3 +18,5 @@ curl -sS https://getcomposer.org/installer | php
 ```
 php example.php
 ```
+
+- You can see more details about the ```example.php```.
