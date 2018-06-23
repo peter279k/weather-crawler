@@ -14,6 +14,8 @@ use Symfony\Component\DomCrawler\Crawler;
 use EasyCSV\Writer;
 use EasyCSV\Reader;
 
+@mkdir('./weathers');
+
 $container = new Container();
 $container->set(WeatherCrawler::class, new WeatherCrawler(new CrawlerConnector()));
 $porter = new Porter($container);
@@ -76,5 +78,9 @@ foreach ($yearMonths as $yearMonth) {
 
         $writer = new Writer('weather_' . $yearMonth . '_' . $weatherStation[1] . '.csv');
         $writer->writeFromArray($csvRecords);
+
+        $sleepSec = random_int(5, 10);
+        echo 'Sleep ' . $sleepSec . PHP_EOL;
+        sleep($sleepSec);
     }
 }
