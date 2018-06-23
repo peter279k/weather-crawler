@@ -1,4 +1,6 @@
 # weaher-crawler
+[![Coverage Status](https://coveralls.io/repos/github/peter279k/weather-crawler/badge.svg?branch=master)](https://coveralls.io/github/peter279k/weather-crawler?branch=master)
+[![Build Status](https://travis-ci.org/peter279k/weather-crawler.svg?branch=master)](https://travis-ci.org/peter279k/weather-crawler)
 
 ## Introduction
 
