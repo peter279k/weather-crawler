@@ -1,0 +1,49 @@
+{
+    "name": "lee/weather-crawler",
+    "type": "library",
+    "description" : "Crawl weather data with PHP",
+    "keywords": ["weather", "Porter", "data-importer"],
+    "license": "MIT",
+    "homepage" : "https://github.com/peter279k/weather-crawler",
+    "authors": [
+        {
+            "name" : "Peter Lee",
+            "email" : "peter279k@gmail.com",
+            "homepage" : "https://github.com/peter279k",
+            "role" : "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/weather-crawler/issues"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php" : ">=7.1",
+        "scriptfusion/porter": "^4",
+        "connectors/http": "^2",
+        "jwage/easy-csv": "^0.0.5",
+        "symfony/css-selector": "^3.4",
+        "symfony/dom-crawler": "^3.4",
+        "joomla/di": "^1",
+        "nesbot/carbon": "^1.30",
+        "enygma/cmd": "^0.4.0",
+        "league/climate": "^3.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "^6.5",
+        "mockery/mockery": "^1"
+    },
+    "autoload": {
+        "psr-4": {
+            "WeatherCrawler\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WeatherCrawler\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "php vendor/bin/phpunit"
+    }
+}
