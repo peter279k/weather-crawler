@@ -37,17 +37,21 @@ $weatherIndex = 0;
 $reader = new Reader('./weather_station.csv');
 
 while ($row = $reader->getRow()) {
-    $stns = range(2, 4);
+    $stns = range(1, 4);
     foreach ($stns as $number) {
         if (empty($row['stn' . $number])) {
             continue;
         }
 
         $stnArray = explode(' ', $row['stn' . $number]);
+        if ($stnArray[0] === '新竹市東區' || $stnArray[0] === '臺南市北區') {
+            $station = str_replace(['(', ')'], '', $stnArray[4]);
+            $stnName = $stnArray[0] . '_' . $station;
+            $weatherStations[$weatherIndex] = [$station, $stnName];
+            $weatherIndex += 1;
+            continue;
+        }
         $station = str_replace(['(', ')'], '', $stnArray[2]);
-        $stnName = $stnArray[0] . '_' . $station;
-        $weatherStations[$weatherIndex] = [$station, $stnName];
-        $weatherIndex += 1;
     }
 }
 
