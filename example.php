@@ -37,11 +37,18 @@ $weatherIndex = 0;
 $reader = new Reader('./weather_station.csv');
 
 while ($row = $reader->getRow()) {
-    $stn1Array = explode(' ', $row['stn1']);
-    $station = str_replace(['(', ')'], '', $stn1Array[2]);
-    $stnName = $stn1Array[0] . '_' . $station;
-    $weatherStations[$weatherIndex] = [$station, $stnName];
-    $weatherIndex += 1;
+    $stns = range(2, 4);
+    foreach ($stns as $number) {
+        if (empty($row['stn' . $number])) {
+            continue;
+        }
+
+        $stnArray = explode(' ', $row['stn' . $number]);
+        $station = str_replace(['(', ')'], '', $stnArray[2]);
+        $stnName = $stnArray[0] . '_' . $station;
+        $weatherStations[$weatherIndex] = [$station, $stnName];
+        $weatherIndex += 1;
+    }
 }
 
 foreach ($yearMonths as $yearMonth) {
