@@ -43,15 +43,15 @@ while ($row = $reader->getRow()) {
             continue;
         }
 
-        $stnArray = explode(' ', $row['stn' . $number]);
-        if ($stnArray[0] === '新竹市東區' || $stnArray[0] === '臺南市北區') {
-            $station = str_replace(['(', ')'], '', $stnArray[4]);
-            $stnName = $stnArray[0] . '_' . $station;
-            $weatherStations[$weatherIndex] = [$station, $stnName];
-            $weatherIndex += 1;
+        if ($row['county'] !== '台中市') {
             continue;
         }
-        $station = str_replace(['(', ')'], '', $stnArray[2]);
+
+        $stnArray = explode(' ', $row['stn' . $number]);
+        $station = str_replace(['(', ')'], '', $stnArray[count($stnArray) - 1]);
+        $stnName = $stnArray[0] . '_' . $station;
+        $weatherStations[$weatherIndex] = [$station, $stnName];
+        $weatherIndex += 1;
     }
 }
 
