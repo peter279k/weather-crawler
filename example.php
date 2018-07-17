@@ -36,7 +36,7 @@ $weatherStations = [];
 $weatherIndex = 0;
 $reader = new Reader('./weather_station.csv');
 
-$counties = ['台北市', '桃園市', '花蓮縣', '屏東縣'];
+$counties = ['台北市', '桃園市', '花蓮縣', '屏東縣', '新竹市'];
 
 while ($row = $reader->getRow()) {
     $stns = range(1, 4);
