@@ -36,6 +36,8 @@ $weatherStations = [];
 $weatherIndex = 0;
 $reader = new Reader('./weather_station.csv');
 
+$counties = ['台北市', '桃園市', '花蓮縣', '屏東縣'];
+
 while ($row = $reader->getRow()) {
     $stns = range(1, 4);
     foreach ($stns as $number) {
@@ -43,7 +45,7 @@ while ($row = $reader->getRow()) {
             continue;
         }
 
-        if ($row['county'] !== '台中市') {
+        if (!in_array($row['county'], $counties)) {
             continue;
         }
 
