@@ -1,20 +1,17 @@
-notifications:
-  email: false
-
 sudo: false
 
 language: php
 
 php:
-  - 7.1
-  - 7.2
+- 7.1
+- 7.2
 
 matrix:
   fast_finish: true
 
 cache:
   directories:
-    - vendor
+  - vendor
 
 install:
   - composer install -n
@@ -25,3 +22,8 @@ script:
 after_success:
   - composer require php-coveralls/php-coveralls:^2
   - vendor/bin/php-coveralls -v
+
+notifications:
+  email: false
+  slack:
+    secure: gb7YplXe1QY6S89tueYAGokQuzngek69kFvE4rZEaINP94jIUgRT4xVsvjYALnAYEjCxOc2eICKDmZKVt20D2KNhT61haPM3q7LhQU2OxdRfejxMQpfYNvoTz8pek59Zvv9ScpGY8O+/ZBClPaJuqbLjV8t9D9mOD/M2n1FIe4HzA0IbOIyzoVfZw1I+2uMqnWC4Z/2TWyr1A0NjOBK7BQ3sudyogvvx+ErxGzRukKEYS8QJv4FIBkLvfLZS0vSszgfrbzT0GziYvH00b12Zy3vwdkb397MDrCa2ypRzGYfaIuoG0yYHwFz0bfv0nOzc3mcOlmi4Bp3XsnDdG/o1hjbsO3nzxCqEY1etoylCEE+/qCgHqLy9Km18fblUBBPRxPdksBkBCSZGUGfd3TS0UVPQ2rd/1rSjXU+j+W6LnTTZ/0X/ArzEfvXHqHlVcs4w43UZvnhnNsGQYcIaHG8djf344LoFBkn7S9sk+F+qpSB3XjaBc1+tmOiLei7kcu+q303WBa8eSOAcq9oLACQdKnnfl2LV6DA3Uckz61UVwrM4MiX7jGREG1QUXiAY9zdSO1YBIzaKHzSh91h8MpLzG8KWHsM/LZkot09CSOrZG3roKCA8+ZCCgBVStHx4S77h02ThXmW56uyhWUDVaIu66jTzV02QBv2DwqFHd4UmQiY=
