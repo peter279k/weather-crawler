@@ -16,7 +16,13 @@ We strongly recommend install this package via Composer.
 curl -sS https://getcomposer.org/installer | php
 ```
 
-- Run the ```example.php```.
+- Install this package via composer
+
+```
+php composer.phar require lee/weather-crawler
+```
+
+- Run the ```example.php``` to learn the basic usage.
 ```
 php example.php
 ```
